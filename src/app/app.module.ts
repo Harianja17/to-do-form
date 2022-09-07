@@ -7,6 +7,7 @@ import { FooterComponent } from './footer.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    LifecycleComponent
   ],
   imports: [
     BrowserModule,
