@@ -1,11 +1,24 @@
-<img [src]="imgSrc" [alt]="imgAlt">
-<h4 [innerText]="fullName" 
-    [style.color]="color" 
-    [style.font-size]="fontSize" 
-    [style.font-weight]="fontWeight">
-</h4>
+<div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');height: 100vh; position: relative; ">
+<div class="body" style="padding: 120px;">
+    
+    <h1>Simple Calculator</h1>
+    <input type="number"
+    class="form-control"
+    id="example"
+    (input)="onKeyPressUp($event)">
 
-<h4 [ngStyle]="styles" >Some People Name</h4>
+    <button (click)="action('+')" style="height:30px;width:30px;margin:3px">+</button>
+    <button (click)="action('-')" style="height:30px;width:30px;margin:3px">-</button>
+    <button (click)="action('*')" style="height:30px;width:30px;margin:3px">*</button>
+    <button (click)="action('/')" style="height:30px;width:30px;margin:3px">/</button>
+    <button (click)="clear()" style="height:30px;width:30px;margin:3px">Clear</button>
+    <input type="text"
+    class="form-control"
+    id="example2"
+    (input)="onKeyPressBottom($event)">
 
-<button type="button" class="btn btn-primary" [disabled]="disabled">kepencet</button>
+    <button (click)="result()" style="height:30px;width:30px ;margin:3px">=</button>
+    <h1>{{jawaban}}</h1>
 
+</div>
+</div>

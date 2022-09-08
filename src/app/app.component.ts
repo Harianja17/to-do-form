@@ -5,36 +5,62 @@ import { AfterContentInit, AfterViewInit, Component, DoCheck, OnInit } from '@an
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  imgSrc:string='./../assets/off_white.jpg'
-  imgAlt:string='Image'
-  // imgSize:string='480 480'
+export class AppComponent{
 
-  fullName:string='Rakha Andi Wibowo'
-  color:string='purple'
-  fontSize:string='5rem'
-  fontWeight:string='600'
-  styles={color:'blue',fontSize:'5rem',fontWeight:'600'}
+  jawaban:number=0;
+  a:string=''
+  b:string=''
+  operator:string=''
+  button:string=''
 
 
-  disabled: boolean = false;
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.disabled = true;
-    }, 2000);
-    setInterval(()=>{
-      if(this.color==='purple')this.color="pink"
-      else if(this.color==='pink') this.color='purple'
-      
-    },2000)
+  onKeyPressUp(event:any){
+    this.a=(event.target.valueAsNumber)
    
   }
-   
-    
-  
-    
-  
+  onKeyPressBottom(event:any){
+    this.b=(event.target.valueAsNumber)
+  }
+  add(){
+    this.operator='+'
 
-  
+  }
+  subtraction(){
+    this.operator='-'
+    
+
+  }
+  multiply(){
+    this.operator='*'
+
+  }
+  division(){
+    this.operator='/'
+    
+
+  }
+  result(){
+    // if(this.operator==='/'){
+    //   this.jawaban=this.a/this.b
+    // }else if(this.operator==='+'){
+    //   this.jawaban=this.a+this.b
+    // }else if(this.operator==='-'){
+    //   this.jawaban=this.a-this.b
+    // }else if(this.operator==='*'){
+    //   this.jawaban=this.a*this.b
+    // }
+    this.jawaban=eval(this.a+this.button+this.b)
+  }
+
+  clear(){
+    this.a=''
+    this.b=''
+    this.button=''
+    this.jawaban=0
+  }
+  action(event:any){
+    this.button=event
+  }
+
 
 }
