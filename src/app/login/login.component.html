@@ -1,23 +1,26 @@
 <div class="container-flex">
     <div class="bg-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');height: 100vh; position: relative; ">
         <div class="row d-flex align-items-center " style="height: 100vh;">
-            <div class="card" style="padding: 30px; width: 480px; margin-left: 900px;border-radius: 1em; position: relative;">
+            <div class="card" style="padding: 30px; width: 480px;border-radius: 1em; position: relative;margin: auto;">
                 <div class="container-flex">
             <h1 class="mb-5">Login Page</h1>
-            <form>
+            <form (submit)="login()">
                 <div class="form-outline mb-4">
                     <label class="form-label" >Email</label>
-                    <input type="email" class="form-control" placeholder="Enter email" />
+                    <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)] ="dataEmail"/>
                 </div>
                 <div class="form-outline mb-4">
                     <label class="form-label">Password</label>
-                    <input type="password"  class="form-control" placeholder="Enter password"/>
+                    <input type="password"  class="form-control" placeholder="Enter password" name="password" [(ngModel)] ="dataPassword" />
                 </div>
-                <button type="button" class="btn btn-primary btn-block mb-2">Login</button>
+                <button type="button" class="btn btn-primary btn-block mb-2" (click)="login()">Login</button>
             </form>
             </div>
             </div>
         </div>
     </div>
 </div>
+    
+
+
 

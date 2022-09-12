@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     NavbarComponent,
     LoginComponent,
-    LifecycleComponent
+    LifecycleComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
