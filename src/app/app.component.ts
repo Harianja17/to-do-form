@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, DoCheck, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,61 +6,33 @@ import { AfterContentInit, AfterViewInit, Component, DoCheck, OnInit } from '@an
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
+  data:string='Ini Rahasia'
+  dataNumber:number=404
+  dataFromChild:string=''
+  dataFromChildNumber:number=100
+  @Output() decrement= new EventEmitter<number>()
 
-  jawaban:number=0;
-  a:string=''
-  b:string=''
-  operator:string=''
-  button:string=''
-
-
-  onKeyPressUp(event:any){
-    this.a=(event.target.valueAsNumber)
-   
-  }
-  onKeyPressBottom(event:any){
-    this.b=(event.target.valueAsNumber)
-  }
-  add(){
-    this.operator='+'
-
-  }
-  subtraction(){
-    this.operator='-'
-    
-
-  }
-  multiply(){
-    this.operator='*'
-
-  }
-  division(){
-    this.operator='/'
-    
-
-  }
-  result(){
-    // if(this.operator==='/'){
-    //   this.jawaban=this.a/this.b
-    // }else if(this.operator==='+'){
-    //   this.jawaban=this.a+this.b
-    // }else if(this.operator==='-'){
-    //   this.jawaban=this.a-this.b
-    // }else if(this.operator==='*'){
-    //   this.jawaban=this.a*this.b
-    // }
-    this.jawaban=eval(this.a+this.button+this.b)
+  increment(){
+    this.dataNumber+=1
   }
 
-  clear(){
-    this.a=''
-    this.b=''
-    this.button=''
-    this.jawaban=0
+  receivedData(value:any){
+    this.dataFromChild=value
   }
-  action(event:any){
-    this.button=event
+  receivedNumber(value:any){
+    this.dataFromChildNumber=value
   }
+
+  ngmodelExample:string='example'
+
+  clearText(){
+    this.ngmodelExample=''
+  }
+  number:number=100
+  sendNumber(){
+    this.decrement.emit (this.number -=1)
+}
+
 
 
 }
