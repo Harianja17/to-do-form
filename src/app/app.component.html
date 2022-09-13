@@ -1,22 +1,23 @@
-<!-- <h1>Parent Component</h1>
-{{data}}
-{{dataFromChild}}
-{{dataFromChildNumber}}
-<button (click)="increment()">increment</button>
-<button (click)="clearText()">clear</button>
-<button (click)="sendNumber()">Send Number</button>
-
-<input type="text" [(ngModel)]="ngmodelExample">
-<hr>
+{{birthday | date:"MM/dd/yyyy"}}
 <br>
- {{ngmodelExample}} -->
-<!-- <home-pages [modelDataFromParent]="ngmodelExample" [dataFromParent]="data" [dataFromParentNumber]="dataNumber" (title)="receivedData($event)" (counter)="receivedNumber($event)"></home-pages>
- --> 
-
-
-<div *ngIf="isLoggedIn;else other_content">
-    
-    <app-logout [name]="email"></app-logout>
-</div>
-
-<ng-template #other_content><app-login (loggedIn)="setLogin($event)"></app-login></ng-template>
+{{birthday | date:"shortTime"}}
+<br>
+{{birthday | date | uppercase}}
+<br>
+{{birthday | date:"d MMMM y"}}
+<br>
+{{birthday | date:"d MMMM y"|lowercase}}
+<br>
+{{birthday | date:"medium"}}
+<br>
+{{someString|uppercase}}
+<br>
+{{someNumber|currency:'IDR '}}
+<br>
+{{someNumber|currency}}
+<br>
+{{someNumber|currency:'IDR '|lowercase}}
+<br>
+{{someNumber | exponent:5}}
+<br>
+{{birthday| age}}

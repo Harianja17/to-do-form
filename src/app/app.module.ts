@@ -8,8 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { AnimeFormComponent } from './anime-form/anime-form.component';
+import { ToDoComponent } from './to-do/to-do.component';
+import { ToDoTableComponent } from './to-do/to-do_table';
+import { ExponentPipe } from './shared/pipes/exponent.pipe';
+import { AgePipe } from './shared/pipes/age.pipe';
 
 
 @NgModule({
@@ -20,12 +25,18 @@ import { LogoutComponent } from './logout/logout.component';
     NavbarComponent,
     LoginComponent,
     LifecycleComponent,
-    LogoutComponent
+    LogoutComponent,
+    AnimeFormComponent,
+    ToDoComponent,
+    ToDoTableComponent,
+    ExponentPipe,
+    AgePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

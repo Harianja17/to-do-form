@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="todoForm" (ngSubmit)="submitData(todoForm.value)">
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" placeholder="enter id..." formControlName="id">
+            <div *ngIf="form('id').invalid && form('id').dirty || form('id').touched">
+                <div class="alert alert-danger" *ngIf="form('id').errors?.['required']"> This field is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="avtivity">Activity</label>
+            <input type="text" class="form-control" placeholder="enter activity..." formControlName="activity">
+            <div *ngIf="form('activity').invalid && form('activity').dirty || form('activity').touched">
+                <div class="alert alert-danger" *ngIf="form('activity').errors?.['required']"> This field is required</div>
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="dateline">Deadline</label>
+            <input type="text" class="form-control" placeholder="enter deadline..." formControlName="dateline">
+            <div *ngIf="form('dateline').invalid && form('dateline').dirty || form('dateline').touched">
+                <div class="alert alert-danger" *ngIf="form('dateline').errors?.['required']"> This field is required</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid">Submit</button>
+    </form>
+</div>
+<app-table [listToDo]="listToDo"></app-table>
+
+
