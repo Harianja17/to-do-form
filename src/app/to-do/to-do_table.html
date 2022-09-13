@@ -4,16 +4,26 @@
 
     <thead>
       <tr>
+        <th scope="col">#</th>
         <th scope="col">Id</th>
         <th scope="col">Activity</th>
-        <th scope="col">Dateline</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let todo of listToDo">
+    <tbody >
+      <tr *ngFor="let todo of listToDo; let i =index" [ngStyle]="{'background-color':finish? 'red':'green'}">
+       
+        <td>{{i+1}}</td>
         <td>{{todo.id}}</td>
         <td>{{todo.activity}}</td>
         <td>{{todo.dateline}}</td>
+      
+        <td>
+            <button (click)="deleteData(i)">Delete</button>
+            <button (click)="setFinish(i)" > finish</button>
+            <button (click)="getDetail(todo)">Update</button>
+        </td>
       </tr>
     </tbody>
     

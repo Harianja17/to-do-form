@@ -15,6 +15,7 @@ import { ToDoComponent } from './to-do/to-do.component';
 import { ToDoTableComponent } from './to-do/to-do_table';
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 import { AgePipe } from './shared/pipes/age.pipe';
+import { ToDoService } from './to-do/to-do.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { AgePipe } from './shared/pipes/age.pipe';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ToDoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
