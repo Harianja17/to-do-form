@@ -10,12 +10,14 @@ export class ToDoService {
     {
       id:'001',
       activity:'Study',
-      dateline:'Learn Programming'
+      dateline:'Learn Programming',
+      finish:false
     },
     {
       id:'002',
       activity:'break',
-      dateline:'shalat and lunch'
+      dateline:'shalat and lunch',
+      finish:false
     }
   ]
 
@@ -26,8 +28,9 @@ export class ToDoService {
     this.todos.splice(i,1)
   }
   addData(data:Todo){
+    data.finish=false
     this.todos.push(data)
-    let finish=false
+    
   }
   
 

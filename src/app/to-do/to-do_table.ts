@@ -42,16 +42,10 @@ getDetail(data:Todo){
 
 }
 
-finish:boolean=false
-setFinish(id:any){
-    const update = this.listToDo.find(x => x.id === id.id);
-    if(update){
-        if(this.finish===false){
-            this.finish=true;
-        } 
-        else if(this.finish===true) this.finish=false
+
+setFinish(data:any){
+    data.finish=!data.finish
         
-    }
     
 }
 
