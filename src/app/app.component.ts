@@ -9,4 +9,9 @@ export class AppComponent{
   birthday:Date=new Date('1997-01-01')
   someString:string='AYaM bUakAr'
   someNumber:number=5
+
+  page:boolean=false
+  changePage(){
+    this.page=true
+  }
 }

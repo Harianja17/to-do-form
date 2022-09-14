@@ -18,12 +18,13 @@
         <td scope="row" [ngStyle]="{'text-decoration': todo.finish? 'line-through':''}">{{todo.id}}</td>
         <td scope="row"  [ngStyle]="{'text-decoration': todo.finish? 'line-through':''}">{{todo.activity}}</td>
         <td scope="row"  [ngStyle]="{'text-decoration': todo.finish? 'line-through':''}">{{todo.dateline}}</td>
-      
+             
         <td>
             <button (click)="deleteData(i)">Delete</button>
             <button (click)="setFinish(todo)" > finish</button>
             <button (click)="getDetail(todo)">Update</button>
         </td>
+        
       </tr>
     </tbody>
     

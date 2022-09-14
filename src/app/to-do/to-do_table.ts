@@ -42,13 +42,8 @@ getDetail(data:Todo){
 
 }
 
-
-setFinish(data:any){
+setFinish(data:Todo){
     data.finish=!data.finish
-        
-    
 }
-
-
 
 }

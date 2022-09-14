@@ -48,7 +48,7 @@ export class ToDoComponent implements OnInit {
       } else {
         this.service.addData(data)
       }
-   
+      this.isValid=!this.isValid
   }
   deleteData(i:number){
     Swal.fire({
@@ -71,6 +71,11 @@ export class ToDoComponent implements OnInit {
 
   form(property:string):FormGroup{
     return this.todoForm.get(property) as FormGroup;
+  }
+
+  isValid:boolean=false
+  setPage(){
+    this.isValid=!this.isValid
   }
 
 
