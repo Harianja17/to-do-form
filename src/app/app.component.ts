@@ -6,6 +6,9 @@ import { AfterContentInit, AfterViewInit, Component, DoCheck, EventEmitter, Inpu
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   birthday:Date=new Date('1997-01-01')
   someString:string='AYaM bUakAr'
   someNumber:number=5

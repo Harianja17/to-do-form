@@ -16,6 +16,7 @@ import { ToDoTableComponent } from './to-do/to-do_table';
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 import { AgePipe } from './shared/pipes/age.pipe';
 import { ToDoService } from './to-do/to-do.service';
+import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ToDoService } from './to-do/to-do.service';
     ToDoComponent,
     ToDoTableComponent,
     ExponentPipe,
-    AgePipe
+    AgePipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

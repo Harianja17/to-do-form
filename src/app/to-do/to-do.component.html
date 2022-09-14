@@ -30,9 +30,11 @@
             <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid">Submit</button>
         </form>
     </div>
+    <button routerLink="/totable">Back</button>
+    
 </div>
 <ng-template #formPage>
-    <app-table [listToDo]="listToDo" [todo]="todo" [ToDoForm]="todoForm"></app-table>
+    <app-table></app-table>
     <button (click)="setPage()">Submit Form</button>
 </ng-template>
 </div>

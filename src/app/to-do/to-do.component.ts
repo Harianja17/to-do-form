@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Todo } from './model/todo.model';
 import { ToDoService } from './to-do.service';
@@ -11,12 +12,24 @@ import { ToDoService } from './to-do.service';
 })
 export class ToDoComponent implements OnInit {
 
-  constructor(private readonly service:ToDoService) { }
+  constructor(private readonly service:ToDoService, private route:ActivatedRoute) { }
   @Output() list=new EventEmitter<FormGroup>()
   @Output() justTodo=new EventEmitter()
 
 
   ngOnInit(): void {
+    // this.route.params.subscribe((params)=>{
+    //   if(params && params['id']){
+    //     console.log(`Params ${params}`,params);
+    //     this.todoForm.controls['id'].setValue(params['id'])
+    //   }
+     
+    // })
+    this.route.queryParams
+    .subscribe((qParams)=>{
+      console.log('Query Params',qParams);
+      
+    })
     this.getListToDo()
   }
   getListToDo(){
@@ -41,14 +54,13 @@ export class ToDoComponent implements OnInit {
     const update = this.listToDo.find(x => x.id === data.id);
     console.log(update);
       if (update) {
-        
-        
         update.activity = data.activity;
         update.dateline = data.dateline;
       } else {
         this.service.addData(data)
       }
       this.isValid=!this.isValid
+      
   }
   deleteData(i:number){
     Swal.fire({
@@ -77,6 +89,8 @@ export class ToDoComponent implements OnInit {
   setPage(){
     this.isValid=!this.isValid
   }
+
+  idFromParams:string=''
 
 
 
