@@ -22,13 +22,14 @@
         <td>
             <button (click)="deleteData(i)">Delete</button>
             <button (click)="setFinish(todo)" >Finish</button>
-            <button (click)="getDetail(todo)" >Update</button>
-            <button (click)="moveToForm(todo.id)">GetDetail</button>
+            <button (click)="update(todo)"routerLink="/todo" >Update</button>
+            <button (click)="moveToForm(todo)">GetDetail</button>
         </td>
 
       </tr>
     </tbody>
     
   </table>
-  <button routerLink="/todo">Add To Do</button>
+  <button class="btn btn-warning"  routerLink="/todo">Back</button>
+
 </div>

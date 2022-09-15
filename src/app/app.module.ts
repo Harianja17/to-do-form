@@ -3,37 +3,44 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
+
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './shared/component/navbar/navbar.component';
+import { LoginComponent } from './auth/login/login.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LogoutComponent } from './logout/logout.component';
-import { AnimeFormComponent } from './anime-form/anime-form.component';
-import { ToDoComponent } from './to-do/to-do.component';
-import { ToDoTableComponent } from './to-do/to-do_table';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { AnimeFormComponent } from './pages/anime-form/anime-form.component';
+
+
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 import { AgePipe } from './shared/pipes/age.pipe';
-import { ToDoService } from './to-do/to-do.service';
+
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
+import { FooterComponent } from './shared/component/footer/footer.component';
+import { ToDoTableComponent } from './pages/to-do/component/list/to-do_table';
+import { ToDoComponent } from './pages/to-do/component/form/to-do.component';
+import { ToDoService } from './pages/to-do/service/to-do.service';
+import { PagesComponent } from './pages/pages.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FooterComponent,
     NavbarComponent,
     LoginComponent,
     LifecycleComponent,
     LogoutComponent,
     AnimeFormComponent,
-    ToDoComponent,
-    ToDoTableComponent,
     ExponentPipe,
     AgePipe,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent,
+    ToDoTableComponent,
+    ToDoComponent,
+    PagesComponent,
+ 
   ],
   imports: [
     BrowserModule,

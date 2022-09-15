@@ -1,7 +1,7 @@
-<div class="container">
-<div *ngIf="isValid===false; else formPage">
+<!-- <div class="container">
+<div *ngIf="isValid===false; else formPage"> -->
     <div class="container">
-        <form [formGroup]="todoForm" (ngSubmit)="submitData(todoForm.value)">
+        <form [formGroup]="todoForm">
             <div class="form-group">
                 <label for="id">Id</label>
                 <input type="text" class="form-control" placeholder="enter id..." formControlName="id">
@@ -27,17 +27,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid" (click)="submitData(todoForm.value)">Submit</button>
+            <button class="btn btn-warning"  routerLink="/totable">Back</button>
         </form>
     </div>
-    <button routerLink="/totable">Back</button>
     
-</div>
-<ng-template #formPage>
-    <app-table></app-table>
-    <button (click)="setPage()">Submit Form</button>
-</ng-template>
-</div>
+
 
 
 
